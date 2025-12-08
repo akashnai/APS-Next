@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { Link } from "next/link";
+import Link from "next/link";
 
 const NotFound = () => {
   const pathname = usePathname();
