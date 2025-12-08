@@ -1,0 +1,140 @@
+import {
+  Activity,
+  BarChart,
+  Users,
+  TrendingUp,
+  Zap,
+  MessageSquare,
+  ShoppingCart,
+  Phone,
+} from "lucide-react";
+
+export const caseStudies = [
+  {
+    slug: "tech-corp-optimization",
+    company: "TechCorp",
+    title: "Optimizing Workflow Efficiency",
+    subtitle: "Streamlining operations for a Fortune 500 company",
+    metric: "200%",
+    metricLabel: "Efficiency Increase",
+    description:
+      "How TechCorp improved their delivery time by implementing our solutions.",
+    category: "Workflow Automation",
+    tags: ["Optimization", "Automation"],
+    image: "/placeholder.svg",
+    year: "2024",
+    industry: "Technology",
+    challenge: "Slow deployment cycles",
+    solution: "Implemented CI/CD pipelines",
+    results: ["Reduced deployment time by 50%", "Increased team productivity"],
+    problemStatement: {
+      main: "Manual workflows were stifling innovation.",
+      points: [
+        { title: "Bottlenecks", description: "Approvals took days." },
+        { title: "Errors", description: "Human error rate was high." },
+      ],
+    },
+    techStack: ["Next.js", "Node.js", "AWS"],
+    timeline: [
+      {
+        week: "Week 1",
+        title: "Discovery",
+        description: "Analyzed existing workflows.",
+      },
+      {
+        week: "Week 4",
+        title: "Implementation",
+        description: "Rolled out the new system.",
+      },
+    ],
+    pipeline: [
+      {
+        step: 1,
+        title: "Ingest",
+        description: "Data collection from various sources.",
+      },
+      { step: 2, title: "Process", description: "AI analysis and filtering." },
+    ],
+    outcomes: [
+      { metric: "50%", outcome: "Reduced deployment time" },
+      { metric: "200%", outcome: "Increase in productivity" },
+    ],
+    icon: Activity,
+  },
+  {
+    slug: "local-shop-boost",
+    company: "Mom & Pop Store",
+    title: "Local Shopping Automation",
+    subtitle: "Bringing local retail to the digital age",
+    metric: "40%",
+    metricLabel: "Sales Growth",
+    description: "Automating inventory and loyalty programs.",
+    category: "Retail",
+    tags: ["Retail", "Automation"],
+    image: "/placeholder.svg",
+    year: "2024",
+    industry: "Retail",
+    challenge: "Manual inventory tracking",
+    solution: "Automated stock alerts",
+    results: ["Eliminated stockouts", "Increased repeat customers"],
+    problemStatement: {
+      main: "Lost sales due to stockouts.",
+      points: [
+        { title: "Manual Counting", description: "Took hours every day." },
+        { title: "Lost Data", description: "Paper records got lost." },
+      ],
+    },
+    techStack: ["React", "Firebase"],
+    timeline: [
+      { week: "Week 1", title: "Setup", description: "Installed sensors." },
+      { week: "Week 2", title: "Launch", description: "System went live." },
+    ],
+    pipeline: [
+      { step: 1, title: "Track", description: "Monitor stock levels." },
+      { step: 2, title: "Alert", description: "Notify manager." },
+    ],
+    outcomes: [
+      { metric: "0", outcome: "Stockouts" },
+      { metric: "40%", outcome: "Sales Growth" },
+    ],
+    icon: ShoppingCart,
+  },
+  {
+    slug: "health-plus-digital",
+    company: "HealthPlus",
+    title: "Digital Transformation",
+    subtitle: "Modernizing patient records",
+    metric: "50%",
+    metricLabel: "Cost Reduction",
+    description: "Digitizing patient records for better accessibility.",
+    category: "Healthcare",
+    tags: ["Healthcare", "Digital Transformation"],
+    image: "/placeholder.svg",
+    year: "2023",
+    industry: "Healthcare",
+    challenge: "Paper-based records",
+    solution: "Cloud-based EMR system",
+    results: ["Faster patient processing", "Secure data storage"],
+    problemStatement: {
+      main: "Paper records were inefficient.",
+      points: [
+        { title: "Space", description: "Physical storage costs." },
+        { title: "Access", description: "Hard to retrieve files." },
+      ],
+    },
+    techStack: ["Python", "PostgreSQL"],
+    timeline: [
+      { week: "Week 1", title: "Migration", description: "Scanned documents." },
+      { week: "Week 8", title: "Complete", description: "All data digitized." },
+    ],
+    pipeline: [
+      { step: 1, title: "Scan", description: "Digitize paper." },
+      { step: 2, title: "Index", description: "Make searchable." },
+    ],
+    outcomes: [
+      { metric: "50%", outcome: "Cost Reduction" },
+      { metric: "99%", outcome: "Data Accuracy" },
+    ],
+    icon: Activity,
+  },
+];
