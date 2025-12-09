@@ -2,11 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const Pricing = () => {
-  const router = useRouter();
 
   return (
     <section id="pricing" className="bg-background py-24 md:py-32 relative overflow-hidden">
@@ -34,7 +33,7 @@ export const Pricing = () => {
           
           <p className="mb-12 text-lg text-muted-foreground md:text-xl max-w-2xl mx-auto leading-relaxed">
             Every business is different, and so are your automation requirements. 
-            We don&apos;t believe in one-size-fits-all pricing. Let&apos;s build a solution that fits your specific goals and budget.
+            We don't believe in one-size-fits-all pricing. Let's build a solution that fits your specific goals and budget.
           </p>
 
           <div className="bg-card/30 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl max-w-3xl mx-auto relative overflow-hidden group hover:border-primary/20 transition-colors duration-500">
@@ -65,9 +64,11 @@ export const Pricing = () => {
                  <p className="text-sm text-muted-foreground mb-8">
                    Get a free consultation and a custom quote for your project.
                  </p>
-                  <Button className="rounded-full bg-black w-32"  onClick={() => router.push('/contact')}>
-                   Contact Us
-                 </Button>
+                  <Button className="rounded-full bg-black w-32" asChild>
+                   <Link href="/contact">
+                     Contact Us
+                   </Link>
+                  </Button>
               </div>
             </div>
           </div>

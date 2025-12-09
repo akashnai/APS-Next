@@ -19,6 +19,7 @@ export const Navbar = () => {
     { name: "Tools", path: "/tools" },
     { name: "Blog", path: "/blog" },
     { name: "Solutions", path: "/solutions" },
+    { name: "Results", path: "/results" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -130,7 +131,7 @@ export const Navbar = () => {
               Sign In
             </ThreeDButton>
             <p className="text-sm text-center text-muted-foreground">
-              Don&apos;t have an account?{" "}
+              Don't have an account?{" "}
               <a href="#" className="text-primary hover:underline">
                 Sign up
               </a>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-const platformPreview = "/placeholder.svg";
+import platformPreview from "@/assets/platform-preview.jpg";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
@@ -41,7 +41,7 @@ export const Platform = () => {
               One platform, unlimited automations
             </h2>
             
-            <Button className="mb-8 h-12 w-32 rounded-full bg-black px-6 text-base"  onClick={() => router.push('/contact')} >
+            <Button className="mb-8 h-12 w-32 rounded-full bg-black px-6 text-base" onClick={() => router.push('/contact')}>
               Contact Us
             </Button>
 
