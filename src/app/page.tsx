@@ -4,7 +4,7 @@ import { LogoSection } from "@/components/LogoSection";
 import { Results } from "@/components/Results";
 import { Features } from "@/components/Features";
 import { Process } from "@/components/Process";
-import { Platform } from "@/components/Platform";
+// import { Platform } from "@/components/Platform";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
 import { CTA } from "@/components/CTA";
