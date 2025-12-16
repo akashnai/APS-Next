@@ -4,11 +4,12 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
-  rewrites() {
+  async redirects() {
     return [
       {
         source: "/admin",
         destination: "/keystatic",
+        permanent: true,
       },
     ];
   },

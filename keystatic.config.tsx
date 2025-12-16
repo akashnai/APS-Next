@@ -13,7 +13,7 @@ export default config({
     },
     navigation: {
       'Case Study': ['caseStudies'],
-      'Blog': ['posts', 'authors', 'authorRoles', 'categories']
+      'Blog': ['posts', 'categories', 'authors', 'authorRoles',]
     }
     // [
     //   'caseStudies',
