@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import platformPreview from "@/assets/platform-preview.jpg";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export const Platform = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ export const Platform = () => {
             className="relative"
           >
             <div className="overflow-hidden rounded-3xl shadow-xl">
-              <img
+              <Image
                 src={platformPreview}
                 alt="Platform Preview"
                 className="h-full w-full object-cover"

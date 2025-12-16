@@ -1,3 +1,4 @@
+"use client"
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -7,7 +8,7 @@ const ResultsPage = () => {
     return (
         <div className="min-h-screen bg-background flex flex-col">
             <Navbar />
-            <main className="flex-grow pt-32">
+            <main className="grow pt-32">
                 <div className="container mx-auto px-6 text-center mb-0">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}

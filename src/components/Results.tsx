@@ -47,7 +47,7 @@ export const Results = ({ showAll = false }: ResultsProps) => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <Card className="group flex flex-col h-full bg-white rounded-[2rem] border border-gray-100 p-8 shadow-sm hover:shadow-glow hover:border-primary/20 transition-all duration-300">
+              <Card className="group flex flex-col h-full bg-white rounded-4xl border border-gray-100 p-8 shadow-sm hover:shadow-glow hover:border-primary/20 transition-all duration-300">
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center justify-center">
                     <study.icon className="w-8 h-8 text-primary stroke-[1.5]" />
@@ -55,7 +55,7 @@ export const Results = ({ showAll = false }: ResultsProps) => {
 
                 </div>
 
-                <div className="flex-grow mb-8">
+                <div className="grow mb-8">
                   <p className="text-sm font-bold text-black mb-2">
                     {study.title || study.category}
                   </p>

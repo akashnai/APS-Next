@@ -1,11 +1,11 @@
 import {
   TrendingUp,
-  Clock,
   Users,
   Phone,
   Zap,
   Database,
   MessageSquare,
+  type LucideIcon
 } from "lucide-react";
 
 export interface CaseStudy {
@@ -16,7 +16,7 @@ export interface CaseStudy {
   metric: string;
   metricLabel: string;
   description: string;
-  icon: any;
+  icon: LucideIcon;
   title?: string;
   subtitle?: string;
   problemStatement?: {

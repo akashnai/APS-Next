@@ -7,6 +7,7 @@ import { ArrowRight, Twitter, Linkedin, Dribbble } from "lucide-react";
 import { ThreeDButton } from "@/components/ui/ThreeDButton";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const About = () => {
     const router = useRouter();
@@ -53,7 +54,7 @@ const About = () => {
                         transition={{ duration: 1, delay: 0.3 }}
                         className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl"
                     >
-                        <img 
+                        <Image 
                             src="/about-hero.png" 
                             alt="APS Team" 
                             className="w-full h-full object-cover"
@@ -102,7 +103,7 @@ const About = () => {
                                         <div className="w-3 h-3 rounded-full bg-green-400"></div>
                                      </div>
                                 </div>
-                                <img src="/about-ui.png" alt="UI Visualization" className="w-full h-auto rounded-lg shadow-sm" />
+                                <Image src="/about-ui.png" alt="UI Visualization" className="w-full h-auto rounded-lg shadow-sm" />
                             </div>
                         </motion.div>
 
@@ -191,8 +192,8 @@ const About = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="group"
                             >
-                                <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-secondary mb-4">
-                                    <img 
+                                <div className="aspect-4/5 overflow-hidden rounded-2xl bg-secondary mb-4">
+                                    <Image 
                                         src={member.img} 
                                         alt={member.name} 
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

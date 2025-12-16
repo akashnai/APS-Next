@@ -13,6 +13,7 @@ import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog";
+import Image from "next/image";
 
 const features = [
   {
@@ -297,8 +298,8 @@ export const Features = ({ showAll = false }: FeaturesProps) => {
                 onClick={() => setSelectedFeature(feature)}
               >
                 <div className={`${feature.bgColor} p-2`}>
-                  <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                    <img
+                  <div className="aspect-4/3 overflow-hidden rounded-2xl">
+                    <Image
                       src={feature.image}
                       alt={feature.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
