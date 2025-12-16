@@ -1,5 +1,5 @@
 
-import { Star, Zap, Circle, Gauge, Users, Activity } from "lucide-react";
+import { Star, Zap, Circle, Gauge, Users, Activity, type LucideIcon } from "lucide-react";
 
 export interface BlogPost {
   id: string;
@@ -12,7 +12,7 @@ export interface BlogPost {
   authorImage: string;
   category: string;
   gradient: string;
-  icon: any;
+  icon: LucideIcon;
   element?: React.ReactNode;
   content: React.ReactNode;
 }
@@ -46,18 +46,18 @@ export const blogPosts: BlogPost[] = [
       <>
         <h2 className="text-2xl font-bold mb-4 mt-8">Introduction</h2>
         <p className="mb-6 text-muted-foreground leading-relaxed">
-          Your SaaS product may be packed with powerful features—but if users don't understand them, they won't see the value.
+          Your SaaS product may be packed with powerful features—but if users don&apos;t understand them, they won&apos;t see the value.
           The way you showcase features can make or break conversions. Great feature presentation balances clarity, design, and storytelling to help users instantly grasp what makes your product special.
         </p>
 
         <h2 className="text-2xl font-bold mb-4 mt-8">Why Feature Presentation Matters</h2>
         <p className="mb-6 text-muted-foreground leading-relaxed">
-          People don't buy features; they buy solutions. The job of your website and product pages is to show how each feature solves a specific user pain point.
+          People don&apos;t buy features; they buy solutions. The job of your website and product pages is to show how each feature solves a specific user pain point.
           When features are presented clearly—with visuals, benefits, and context—users connect the dots between what your product does and how it improves their workflow.
         </p>
 
         <div className="bg-muted/50 p-6 rounded-xl border-l-4 border-primary mb-8 italic text-lg text-foreground/80">
-          "Your features should tell a story—how your product turns user challenges into effortless wins."
+          &quot;Your features should tell a story—how your product turns user challenges into effortless wins.&quot;
         </div>
 
         <h2 className="text-2xl font-bold mb-4 mt-8">Best Practices for Highlighting SaaS Features</h2>
@@ -73,12 +73,12 @@ export const blogPosts: BlogPost[] = [
         <h2 className="text-2xl font-bold mb-4 mt-8">Structuring a Strong Features Section</h2>
         <p className="mb-6 text-muted-foreground leading-relaxed">
           Start with your most impactful features first. These are the ones that solve major user problems or differentiate your product.
-          Follow a visual rhythm—alternate between text and imagery, keep consistent spacing, and ensure every section ends with a clear call-to-action like "Learn More" or "Try it Free."
+          Follow a visual rhythm—alternate between text and imagery, keep consistent spacing, and ensure every section ends with a clear call-to-action like &quot;Learn More&quot; or &quot;Try it Free.&quot;
         </p>
 
         <h2 className="text-2xl font-bold mb-4 mt-8">Conclusion</h2>
         <p className="mb-6 text-muted-foreground leading-relaxed">
-          The best SaaS feature sections don't just list capabilities—they tell a story of value.
+          The best SaaS feature sections don&apos;t just list capabilities—they tell a story of value.
           By focusing on clarity, relevance, and visual storytelling, you turn technical details into meaningful reasons for users to take the next step.
         </p>
       </>
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
     icon: Zap,
     element: (
         <div className="relative w-20 h-20">
-             <div className="absolute inset-0 bg-gradient-to-tr from-purple-400 to-yellow-300 rounded-full blur-[1px] transform rotate-12 shadow-inner"></div>
+             <div className="absolute inset-0 bg-linear-to-tr from-purple-400 to-yellow-300 rounded-full blur-[1px] transform rotate-12 shadow-inner"></div>
              <div className="absolute inset-4 bg-[#FDEDBA] rounded-full blur-[2px]"></div>
         </div>
     ),
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
         <>
         <h2 className="text-2xl font-bold mb-4 mt-8">The Power of Visuals</h2>
         <p className="mb-6 text-muted-foreground leading-relaxed">
-            Complex products often suffer from the "wall of text" problem. Visual storytelling breaks down barriers.
+            Complex products often suffer from the &quot;wall of text&quot; problem. Visual storytelling breaks down barriers.
         </p>
         <p className="mb-6 text-muted-foreground leading-relaxed">
             More content coming soon...
