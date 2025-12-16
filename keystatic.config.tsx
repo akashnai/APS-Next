@@ -8,9 +8,21 @@ export default config({
       name: "APS Studio",
       mark: () => {
         // eslint-disable-next-line @next/next/no-img-element
-        return <img src="/favicon.ico" alt="APS"/>;
+        return <img src="/favicon.ico" alt="APS" />;
       },
     },
+    navigation: {
+      'Case Study': ['caseStudies'],
+      'Blog': ['posts', 'authors', 'authorRoles', 'categories']
+    }
+    // [
+    //   'caseStudies',
+    //   '---',
+    //   'posts',
+    //   'authors',
+    //   'authorRoles',
+    //   'categories'
+    // ]
   },
   storage: {
     kind: "local",
