@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { reader } from "../reader";
+import { reader } from "@/app/reader";
 
 
 

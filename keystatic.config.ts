@@ -61,6 +61,7 @@ export default config({
         icon: fields.cloudImage({ label: "Icon Link" }),
         title: fields.text({ label: "Title" }),
         subtitle: fields.text({ label: "Subtitle" }),
+        description: fields.text({ label: "Description" }),
         metric: fields.object(
           {
             label: fields.text({ label: "Label" }),
@@ -70,7 +71,6 @@ export default config({
             label: "Metric",
           }
         ),
-        description: fields.text({ label: "Description" }),
         problemStatement: fields.object(
           {
             main: fields.text({ label: "Main Statement" }),
@@ -80,10 +80,10 @@ export default config({
                   title: fields.text({ label: "Title" }),
                   description: fields.text({ label: "Description" }),
                 },
-                { label: "Statement" }
+                { label: "Problem Point" }
               ),
               {
-                label: "Other Statements",
+                label: "Other Points",
                 itemLabel: (props) => props.fields.title.value,
               }
             ),
@@ -115,7 +115,8 @@ export default config({
           ),
           {
             label: "Timelines",
-            itemLabel: (props) => props.fields.title.value,
+            itemLabel: (props) =>
+              `${props.fields.week.value}. ${props.fields.title.value}`,
           }
         ),
         pipeline: fields.array(
@@ -131,7 +132,8 @@ export default config({
           ),
           {
             label: "Pipeline",
-            itemLabel: (props) => props.fields.title.value,
+            itemLabel: (props) =>
+              `${props.fields.step.value}. ${props.fields.title.value}`,
           }
         ),
         outcomes: fields.array(

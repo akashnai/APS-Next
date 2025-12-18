@@ -1,19 +1,16 @@
-// "use client";
 
-// import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 import { reader } from "@/app/reader";
 import Image from "next/image";
-// import { caseStudies } from "@/data/caseStudies";
 
 interface ResultsProps {
   showAll?: boolean;
 }
 
-export const Results = async ({ showAll = false }: ResultsProps) => {
+export default async function Results ({ showAll = false }: ResultsProps) {
   const studies = await reader.collections.caseStudies.all();
   const displayedStudies = showAll ? studies : studies.slice(0, 3);
 
@@ -115,7 +112,8 @@ export const Results = async ({ showAll = false }: ResultsProps) => {
               className="rounded-full px-8 h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105 bg-black text-white hover:bg-primary"
             >
               <Link href="/results">
-                Explore All Case Studies <ArrowRight className="ml-2 w-5 h-5" />
+                Explore All Case Studies 
+                {/* <ArrowRight className="ml-2 w-5 h-5" /> */}
               </Link>
             </Button>
           </div>
@@ -124,3 +122,12 @@ export const Results = async ({ showAll = false }: ResultsProps) => {
     </section>
   );
 };
+
+
+export async function generateStaticParams() {
+  const slugs = await reader.collections.caseStudies.list();
+
+  return slugs.map((slug: string) => ({
+    slug,
+  }));
+}

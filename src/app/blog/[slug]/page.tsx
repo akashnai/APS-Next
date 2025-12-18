@@ -9,7 +9,7 @@ import { Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import { reader } from "@/app/reader";
 import Link from "next/link";
 import Markdoc from "@markdoc/markdoc";
-import { markdocConfig } from '../../../../keystatic.config';
+import { markdocConfig } from '@/../keystatic.config';
 import React from 'react';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
