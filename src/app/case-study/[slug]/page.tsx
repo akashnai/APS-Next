@@ -8,8 +8,8 @@ import { reader } from "@/app/reader";
 import { notFound } from "next/navigation";
 import AnimatedSteps from "./AnimatedSteps";
 
-const CaseStudyDetail = async ({ params }: { params: { slug: string } }) => {
-  const slug = params?.slug as string;
+const CaseStudyDetail = async ({ params }: { params: Promise<{ slug: string }>}) => {
+  const {slug} = await params;
 
   const study = await reader.collections.caseStudies.read(slug);
 
