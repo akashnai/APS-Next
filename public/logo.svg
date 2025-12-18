@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <path d="M65.4,24.1 C78.9,12.3 105.3,6.5 105.3,6.5 C105.3,6.5 100.5,35.6 86.9,49.1 C73.3,62.6 46.8,70.8 46.8,70.8 C46.8,70.8 51.8,35.9 65.4,24.1 Z M67.8,55.7 C74.9,49.8 83.4,39.5 89.7,28.2" fill="#000000" stroke="none"/>
+
+  <text x="50" y="125" font-family="Arial, sans-serif" font-weight="900" font-size="72" letter-spacing="2" fill="#000000">PIZNA</text>
+
+  <text x="50" y="165" font-family="Brush Script MT, cursive" font-size="28" fill="#000000">Handmade since 1990</text>
+</svg>

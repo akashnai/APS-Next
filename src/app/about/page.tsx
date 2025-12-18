@@ -52,14 +52,14 @@ const About = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl"
+                        className="relative w-full aspect-video md:aspect-21/9 rounded-3xl overflow-hidden shadow-2xl"
                     >
                         <Image 
                             src="/about-hero.png" 
                             alt="APS Team" 
                             className="w-full h-full object-cover"
                         />
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                         <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
                     </motion.div>
                 </section>
 
@@ -224,7 +224,7 @@ const About = () => {
                 </section>
                 
                  {/* Pre-Footer Hero */}
-                <section className="relative py-24 bg-gradient-to-b from-background to-primary/5 overflow-hidden">
+                <section className="relative py-24 bg-linear-to-b from-background to-primary/5 overflow-hidden">
                      <div className="container mx-auto px-6 text-center relative z-10">
                          <h2 className="text-2xl md:text-4xl font-bold mb-6">
                             Take your creative workflow <br />

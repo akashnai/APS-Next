@@ -1,3 +1,4 @@
+import KeystaticAdminLogo from "@/components/keystaticAdminLogo";
 import { config, collection, fields } from "@keystatic/core";
 
 export const markdocConfig = fields.markdoc.createMarkdocConfig({});
@@ -6,30 +7,19 @@ export default config({
   ui: {
     brand: {
       name: "APS Studio",
-      mark: () => {
-        // eslint-disable-next-line @next/next/no-img-element
-        return <img src="/favicon.ico" alt="APS" className="size-8 rounded-md" />;
-      },
+      mark: KeystaticAdminLogo,
     },
     navigation: {
-      'Case Study': ['caseStudies'],
-      'Blog': ['posts', 'categories', 'authors', 'authorRoles',]
-    }
-    // [
-    //   'caseStudies',
-    //   '---',
-    //   'posts',
-    //   'authors',
-    //   'authorRoles',
-    //   'categories'
-    // ]
+      "Case Study": ["caseStudies", "caseStudyCategories"],
+      Blog: ["posts", "categories", "authors", "authorRoles"],
+    },
   },
   storage: {
     kind: "local",
   },
   collections: {
     posts: collection({
-      label: "Blog",
+      label: "Blog Posts",
       slugField: "title",
       path: "src/data/blog/posts/*",
       entryLayout: "content",
@@ -60,24 +50,49 @@ export default config({
     caseStudies: collection({
       label: "Case Studies",
       slugField: "company",
-      path: "src/data/case-studies/*",
+      path: "src/data/case-studies/studies/*",
       format: { data: "json" },
       schema: {
         company: fields.slug({ name: { label: "Company" } }),
+        category: fields.relationship({
+          collection: "caseStudyCategories",
+          label: "Category",
+        }),
         icon: fields.cloudImage({ label: "Icon Link" }),
         title: fields.text({ label: "Title" }),
         subtitle: fields.text({ label: "Subtitle" }),
         metric: fields.object(
           {
-            metrics: fields.text({ label: "Metric Label" }),
-            outcome: fields.text({ label: "Metric Outcome" }),
+            label: fields.text({ label: "Label" }),
+            outcome: fields.text({ label: "Outcome" }),
           },
           {
             label: "Metric",
           }
         ),
         description: fields.text({ label: "Description" }),
-        content: fields.markdoc({ label: "Content" }),
+        problemStatement: fields.object(
+          {
+            main: fields.text({ label: "Main Statement" }),
+            points: fields.array(
+              fields.object(
+                {
+                  title: fields.text({ label: "Title" }),
+                  description: fields.text({ label: "Description" }),
+                },
+                { label: "Statement" }
+              ),
+              {
+                label: "Other Statements",
+                itemLabel: (props) => props.fields.title.value,
+              }
+            ),
+          },
+          {
+            label: "Problem Statement",
+          }
+        ),
+        // content: fields.markdoc({ label: "Content" }),
         techStack: fields.array(
           fields.text({ label: "Tech Stack" }),
           // Labelling options
@@ -86,10 +101,43 @@ export default config({
             itemLabel: (props) => props.value,
           }
         ),
+
+        timeline: fields.array(
+          fields.object(
+            {
+              week: fields.number({ label: "Week" }),
+              title: fields.text({ label: "Title" }),
+              description: fields.text({ label: "Description" }),
+            },
+            {
+              label: "Time Line",
+            }
+          ),
+          {
+            label: "Timelines",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
+        pipeline: fields.array(
+          fields.object(
+            {
+              step: fields.number({ label: "Step" }),
+              title: fields.text({ label: "Title" }),
+              description: fields.text({ label: "Description" }),
+            },
+            {
+              label: "Step",
+            }
+          ),
+          {
+            label: "Pipeline",
+            itemLabel: (props) => props.fields.title.value,
+          }
+        ),
         outcomes: fields.array(
           fields.object(
             {
-              metrics: fields.text({ label: "Metrics" }),
+              metric: fields.text({ label: "Metrics" }),
               outcome: fields.text({ label: "Outcome" }),
             },
             {
@@ -98,7 +146,7 @@ export default config({
           ),
           {
             label: "Outcomes",
-            itemLabel: (props) => props.fields.metrics.value,
+            itemLabel: (props) => props.fields.metric.value,
           }
         ),
       },
@@ -138,6 +186,23 @@ export default config({
       label: "Blog Categories",
       slugField: "category",
       path: "src/data/blog/categories/*",
+      format: { data: "json" },
+      schema: {
+        category: fields.slug({
+          name: {
+            label: "Label",
+          },
+          // Optional slug label overrides
+          slug: {
+            label: "Value",
+          },
+        }),
+      },
+    }),
+    caseStudyCategories: collection({
+      label: "Case Study Categories",
+      slugField: "category",
+      path: "src/data/case-studies/categories/*",
       format: { data: "json" },
       schema: {
         category: fields.slug({
