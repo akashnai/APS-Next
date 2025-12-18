@@ -32,7 +32,6 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         excerpt: fields.text({ label: "Excerpt" }),
-        element: fields.mdx({ label: "Element" }),
         content: fields.markdoc({ label: "Content" }),
         date: fields.date({ label: "Date" }),
         author: fields.relationship({

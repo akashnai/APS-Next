@@ -1,4 +1,3 @@
-
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -9,10 +8,15 @@ import { Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import { reader } from "@/app/reader";
 import Link from "next/link";
 import Markdoc from "@markdoc/markdoc";
-import { markdocConfig } from '@/../keystatic.config';
-import React from 'react';
+import { markdocConfig } from "@/../keystatic.config";
+import React from "react";
+import Image from "next/image";
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
 
   const post = await reader.collections.posts.read(slug);
@@ -20,19 +24,16 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   if (!post) return notFound();
 
   const { node } = await post.content();
-  const svg = await post.element()
 
   const errors = Markdoc.validate(node, markdocConfig);
   if (errors.length) {
     console.error(errors);
-    throw new Error('Invalid content');
+    throw new Error("Invalid content");
   }
 
   const renderable = Markdoc.transform(node, markdocConfig);
 
-
-
-  const relatedPosts = (await reader.collections.posts.all()).slice(0, 3)
+  const relatedPosts = (await reader.collections.posts.all()).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
@@ -45,9 +46,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               {post.date}
             </div>
 
-            <h1 className="text-5xl font-black mb-6">
-              {post.title}
-            </h1>
+            <h1 className="text-5xl font-black mb-6">{post.title}</h1>
 
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {post.excerpt}
@@ -67,8 +66,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             className={`animate-fade-up w-full p-8 rounded-[2.5rem] bg-linear-to-br ${post.gradient} mb-20`}
           >
             <div className="aspect-video w-full bg-white/50 rounded-3xl flex items-center justify-center">
-              <div className="w-24 h-24 text-foreground/20" dangerouslySetInnerHTML={{ __html: svg }}>
-
+              <div className="w-24 h-24 text-foreground/20">
+                {post.icon.src ?? (
+                  <Image
+                    src={post.icon.src}
+                    alt={post.icon.alt}
+                    height={post.icon.height as number}
+                    width={post.icon.width as number}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -95,14 +101,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedPosts.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/blog/${p.slug}`}
-                >
-                  <Card
-                    className="p-6 cursor-pointer"
-                  >
-                    <div className={`h-48 rounded-xl bg-linear-to-br ${p.entry.gradient} mb-4`} />
+                <Link key={p.slug} href={`/blog/${p.slug}`}>
+                  <Card className="p-6 cursor-pointer">
+                    <div
+                      className={`h-48 rounded-xl bg-linear-to-br ${p.entry.gradient} mb-4`}
+                    />
                     <h3 className="text-lg font-bold">{p.entry.title}</h3>
                   </Card>
                 </Link>
@@ -116,8 +119,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     </div>
   );
 }
-
-
 
 export async function generateStaticParams() {
   const slugs = await reader.collections.posts.list();
