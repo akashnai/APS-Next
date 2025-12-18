@@ -8,7 +8,7 @@ export default config({
       name: "APS Studio",
       mark: () => {
         // eslint-disable-next-line @next/next/no-img-element
-        return <img src="/favicon.ico" alt="APS" className="size-10" />;
+        return <img src="/favicon.ico" alt="APS" className="size-8 rounded-md" />;
       },
     },
     navigation: {
