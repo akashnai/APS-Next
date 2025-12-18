@@ -50,13 +50,13 @@ export default async function Results ({ showAll = false }: ResultsProps) {
               <Card className="group flex flex-col h-full bg-white rounded-4xl border border-gray-100 p-8 shadow-sm hover:shadow-glow hover:border-primary/20 transition-all duration-300">
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center justify-center">
-                    <Image
+                    {study.icon?.src ?? <Image
                       src={study.icon.src}
                       alt={study.icon.alt}
                       height={study.icon.height as number}
                       width={study.icon.width as number}
                       className="w-8 h-8 text-primary stroke-[1.5]"
-                    />
+                    />}
                   </div>
                 </div>
 

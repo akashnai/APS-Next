@@ -3,6 +3,10 @@ import { config, collection, fields } from "@keystatic/core";
 
 export const markdocConfig = fields.markdoc.createMarkdocConfig({});
 
+
+const REPO_OWNER = 'akashnai'
+const REPO_NAME = 'APS-Next'
+
 export default config({
   ui: {
     brand: {
@@ -15,7 +19,8 @@ export default config({
     },
   },
   storage: {
-    kind: "local",
+    kind: "github",
+    repo: `${REPO_OWNER}/${REPO_NAME}`,
   },
   collections: {
     posts: collection({
