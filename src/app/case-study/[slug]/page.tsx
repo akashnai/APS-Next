@@ -8,8 +8,8 @@ import { reader } from "@/app/reader";
 import { notFound } from "next/navigation";
 import AnimatedSteps from "./AnimatedSteps";
 
-const CaseStudyDetail = async ({ params }: { params: Promise<{ slug: string }>}) => {
-  const {slug} = await params;
+const CaseStudyDetail = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
 
   const study = await reader.collections.caseStudies.read(slug);
 
@@ -126,14 +126,19 @@ const CaseStudyDetail = async ({ params }: { params: Promise<{ slug: string }>})
               <h3 className="text-2xl font-bold uppercase tracking-tight mb-8">Solution Architecture</h3>
               <div className="bg-secondary/5 border rounded-2xl p-8 overflow-x-auto">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 min-w-[600px]">
-                  <div className="flex flex-col items-center gap-3 text-center w-32">
-                    <div className="w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 border shadow-sm flex items-center justify-center text-green-500">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  {study.techStack.map((stack, n) => (
+                    <div key={stack}>
+                      {!n ? null : <div className="h-0.5 flex-1 bg-border w-full md:w-auto"></div>}
+                      <div className="flex flex-col items-center gap-3 text-center w-32">
+                        <div className="w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 border shadow-sm flex items-center justify-center text-green-500">
+                          {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> */}
+                        </div>
+                        <span className="font-bold text-sm">{stack}</span>
+                      </div>
                     </div>
-                    <span className="font-bold text-sm">Google Sheets</span>
-                  </div>
+                  ))}
 
-                  <div className="h-0.5 flex-1 bg-border w-full md:w-auto relative">
+                  {/* <div className="h-0.5 flex-1 bg-border w-full md:w-auto relative">
                     <div className="absolute inset-0 bg-linear-to-r from-transparent via-primary to-transparent opacity-20"></div>
                   </div>
 
@@ -144,7 +149,6 @@ const CaseStudyDetail = async ({ params }: { params: Promise<{ slug: string }>})
                     <span className="font-bold text-sm">Auto Trigger</span>
                   </div>
 
-                  <div className="h-0.5 flex-1 bg-border w-full md:w-auto"></div>
 
                   <div className="flex flex-col items-center gap-3 text-center w-32">
                     <div className="w-16 h-16 rounded-xl bg-white dark:bg-zinc-800 border shadow-sm flex items-center justify-center text-purple-500">
@@ -160,7 +164,7 @@ const CaseStudyDetail = async ({ params }: { params: Promise<{ slug: string }>})
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </div>
                     <span className="font-bold text-sm">Smart Handoff</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>

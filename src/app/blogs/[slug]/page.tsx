@@ -25,10 +25,10 @@ export default async function Post(props: {
   const renderable = Markdoc.transform(node, markdocConfig);
 
   return (
-    <div>
+    <article className="prose lg:prose-xl">
       <h1>{post.title}</h1>
       {Markdoc.renderers.react(renderable, React)}
-    </div>
+    </article>
   );
 }
 
