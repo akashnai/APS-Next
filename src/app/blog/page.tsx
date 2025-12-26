@@ -11,7 +11,7 @@ import Image from "next/image";
 
 
 export default async function BlogPage() {
-  const posts = await reader.collections.posts.all();
+  const posts = (await reader.collections.posts.all()).filter((post) => !post.entry.draft);
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans selection:bg-purple-100">
@@ -51,11 +51,12 @@ export default async function BlogPage() {
                 <Link href={`/blog/${post.slug}`}>
                   <Card className="group h-full border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-transparent overflow-hidden rounded-3xl cursor-pointer">
                     <div className={`h-64 w-full bg-linear-to-br ${post.entry.gradient} flex items-center justify-center p-6`}>
-                      <div className="transition-transform duration-500 group-hover:scale-110 flex items-center justify-center w-full h-full">
-                        {post.entry.icon.src ?? (
+                      <div className="transition-transform duration-500 -z-10 group-hover:scale-110 flex items-center justify-center w-full h-full">
+                        {!post.entry.icon.src ? null : (
                           <Image
+                            className="-z-10 "
                             src={post.entry.icon.src}
-                            alt={post.entry.icon.alt}
+                            alt={post.entry.icon.alt || "Blog post icon"}
                             height={post.entry.icon.height as number}
                             width={post.entry.icon.width as number}
                           />

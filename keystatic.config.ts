@@ -3,9 +3,8 @@ import { config, collection, fields } from "@keystatic/core";
 
 export const markdocConfig = fields.markdoc.createMarkdocConfig({});
 
-
-const REPO_OWNER = 'akashnai'
-const REPO_NAME = 'APS-Next'
+const REPO_OWNER = "akashnai";
+const REPO_NAME = "APS-Next";
 
 export default config({
   ui: {
@@ -18,9 +17,12 @@ export default config({
       Blog: ["posts", "categories", "authors", "authorRoles"],
     },
   },
+  
   storage: {
-    kind: "github",
-    repo: `${REPO_OWNER}/${REPO_NAME}`,
+    kind: process.env.NODE_ENV === "development" ? "local" :  "cloud",
+  },
+  cloud: process.env.NODE_ENV === "development" ? undefined :  {
+    project: 'mafia-akki/aps-next',
   },
   collections: {
     posts: collection({
@@ -32,7 +34,15 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         excerpt: fields.text({ label: "Excerpt" }),
-        content: fields.markdoc({ label: "Content" }),
+        content: fields.markdoc({
+          label: "Content",
+          options: {
+            image: {
+              directory: "public/images/posts",
+              publicPath: "/images/posts/",
+            },
+          },
+        }),
         date: fields.date({ label: "Date" }),
         author: fields.relationship({
           label: "Author",
@@ -49,6 +59,7 @@ export default config({
             "Tailwind gradient class (eg, 'from-[#D3E4FD] to-[#FFD1D1]') ",
         }),
         icon: fields.cloudImage({ label: "Icon Link" }),
+        draft: fields.checkbox({ label: "Draft" }),
       },
     }),
     caseStudies: collection({

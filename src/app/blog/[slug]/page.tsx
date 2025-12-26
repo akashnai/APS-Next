@@ -67,9 +67,9 @@ export default async function BlogPostPage({
           >
             <div className="aspect-video w-full bg-white/50 rounded-3xl flex items-center justify-center">
               <div className="w-24 h-24 text-foreground/20">
-                {post.icon.src ?? (
-                  <Image
-                    src={post.icon.src}
+                {!post.icon.src ? null : (
+                  <img
+                    src={post.icon?.src}
                     alt={post.icon.alt}
                     height={post.icon.height as number}
                     width={post.icon.width as number}
