@@ -3,7 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 // import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { reader } from "@/app/reader";
 import Image from "next/image";
@@ -79,11 +79,7 @@ export default async function BlogPage() {
             )}
           </div>
 
-          <div className="mt-16 text-center">
-            <Button className="rounded-full px-8 py-6 text-lg bg-[#6366F1] hover:bg-[#5558E6] text-white shadow-lg">
-              Load More
-            </Button>
-          </div>
+
         </div>
       </main>
 
