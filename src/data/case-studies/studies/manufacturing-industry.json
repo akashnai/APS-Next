@@ -1,0 +1,16 @@
+{
+  "company": "Manufacturing Industry",
+  "category": "Finance",
+  "title": "Lead Scrapping & Outreach",
+  "subtitle": "Zero-error accounting with real-time transaction matching.",
+  "description": "Automating reconciliation processes to eliminate human error and speed up financial reporting.",
+  "metric": {
+    "label": "in Transaction Processing",
+    "outcome": "3000 emails/day"
+  },
+  "techStack": ["Python", "SQL", "Tableau", "AWS"],
+  "outcomes": [
+    { "metric": "Error Rate", "outcome": "Reduced from 5% to 0.1%" },
+    { "metric": "Speed", "outcome": "Processing time cut by 90%" }
+  ]
+}

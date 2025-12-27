@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import { Features } from "@/components/Features";
 
 const Solutions = () => {
     return (
@@ -20,9 +21,9 @@ const Solutions = () => {
                     <p className="text-xl text-muted-foreground">
                         Explore our library of pre-built automation workflows.
                     </p>
-                    <div className="mt-12 p-8 border border-dashed border-border rounded-xl">
-                        <p className="text-muted-foreground">Coming Soon...</p>
-                    </div>
+                </div>
+                <div className="mt-6">
+                    <Features showAll={true} />
                 </div>
             </main>
             <Footer />

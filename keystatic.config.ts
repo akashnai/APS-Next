@@ -17,13 +17,16 @@ export default config({
       Blog: ["posts", "categories", "authors", "authorRoles"],
     },
   },
-  
+
   storage: {
-    kind: process.env.NODE_ENV === "development" ? "local" :  "cloud",
+    kind: process.env.NODE_ENV === "development" ? "local" : "cloud",
   },
-  cloud: process.env.NODE_ENV === "development" ? undefined :  {
-    project: 'mafia-akki/aps-next',
-  },
+  cloud:
+    process.env.NODE_ENV === "development"
+      ? undefined
+      : {
+          project: "mafia-akki/aps-next",
+        },
   collections: {
     posts: collection({
       label: "Blog Posts",
@@ -58,7 +61,7 @@ export default config({
           description:
             "Tailwind gradient class (eg, 'from-[#D3E4FD] to-[#FFD1D1]') ",
         }),
-        icon: fields.cloudImage({ label: "Icon Link" }),
+        icon: fields.text({ label: "Icon Link" }),
         draft: fields.checkbox({ label: "Draft" }),
       },
     }),
@@ -73,7 +76,7 @@ export default config({
           collection: "caseStudyCategories",
           label: "Category",
         }),
-        icon: fields.cloudImage({ label: "Icon Link" }),
+        icon: fields.text({ label: "Icon Link" }),
         title: fields.text({ label: "Title" }),
         subtitle: fields.text({ label: "Subtitle" }),
         description: fields.text({ label: "Description" }),

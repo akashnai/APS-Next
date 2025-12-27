@@ -3,24 +3,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import featureSocial from "@/assets/feature-social.jpg";
-import featureCalling from "@/assets/feature-calling.jpg";
-import featureShopping from "@/assets/feature-shopping.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap, Wrench } from "lucide-react";
 import Link from "next/link";
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
 } from "@/components/ui/dialog";
-import Image from "next/image";
 
 const features = [
   {
     title: "AI Social Media Influencer",
     description: "Let AI craft engaging and on-brand social media content that resonates with your audience, saving you time and boosting results.",
-    image: featureSocial,
+    image: "/feature-ai-influencer.png",
     bgColor: "bg-purple-50",
+    link: "/contact",
     details: {
       version: "Version 2.4.0",
       date: "December 12, 2025",
@@ -51,8 +49,9 @@ const features = [
   {
     title: "VoIP Calling",
     description: "Easily set up VoIP calling systems to make and receive calls online, ideal for remote and global communication.",
-    image: featureCalling,
+    image: "/feature-voip-calling.png",
     bgColor: "bg-orange-50",
+    link: "/contact",
     details: {
       version: "Version 1.8.2",
       date: "November 28, 2025",
@@ -81,10 +80,11 @@ const features = [
     }
   },
   {
-    title: "Local Shopping Automation",
-    description: "Automate in-store tasks like stock alerts and loyalty perks to help you run a smoother, smarter shop.",
-    image: featureShopping,
+    title: "Lead Scrapping system",
+    description: "Automated Lead scrapping and qualifying system providing you leads to cater every morning",
+    image: "/feature-lead-scrapping.png",
     bgColor: "bg-blue-50",
+    link: "/contact",
     details: {
       version: "Version 3.1.0",
       date: "December 5, 2025",
@@ -107,148 +107,6 @@ const features = [
             "Optimized checkout process integration.",
             "Better mobile support for inventory scanning app.",
             "Enhanced reporting for peak shopping hours."
-          ]
-        }
-      ]
-    }
-  },
-  {
-    title: "Smart Scheduling",
-    description: "Automate your appointment bookings and calendar management to ensure you never miss a business opportunity.",
-    image: featureSocial,
-    bgColor: "bg-pink-50",
-    details: {
-      version: "Version 2.0.1",
-      date: "December 10, 2025",
-      sections: [
-        {
-          title: "Updates",
-          icon: Sparkles,
-          color: "text-amber-500",
-          items: [
-            "AI-powered conflict resolution for meetings.",
-            "Automatic timezone detection and conversion.",
-            "Customizable booking pages for teams."
-          ]
-        }
-      ]
-    }
-  },
-  {
-    title: "Customer Analytics",
-    description: "Gain deep insights into customer behavior and trends to make data-driven decisions for your business growth.",
-    image: featureCalling,
-    bgColor: "bg-green-50",
-    details: {
-      version: "Version 4.5.0",
-      date: "December 1, 2025",
-      sections: [
-        {
-          title: "Insights",
-          icon: Sparkles,
-          color: "text-amber-500",
-          items: [
-            "Predictive churn analysis models.",
-            "Customer lifetime value (CLV) visualizations.",
-            "Cohort analysis for marketing campaigns."
-          ]
-        },
-        {
-          title: "Bug Fixes",
-          icon: Wrench,
-          color: "text-emerald-500",
-          items: [
-            "Fixed data export encoding issues.",
-            "Resolved chart rendering bugs on Safari.",
-            "Addressed slow query times for large datasets."
-          ]
-        }
-      ]
-    }
-  },
-  {
-    title: "Inventory Management",
-    description: "Keep track of your stock levels in real-time with automated alerts and seamless integration with your sales channels.",
-    image: featureShopping,
-    bgColor: "bg-yellow-50",
-    details: {
-      version: "Version 1.2.0",
-      date: "November 20, 2025",
-      sections: [
-        {
-          title: "Features",
-          icon: Sparkles,
-          color: "text-amber-500",
-          items: [
-            "Barcode scanning support via mobile app.",
-            "Multi-warehouse stock tracking.",
-            "Supplier performance rating system."
-          ]
-        }
-      ]
-    }
-  },
-  {
-    title: "Email Marketing",
-    description: "Create personalized email campaigns that convert leads into customers with our intelligent automation tools.",
-    image: featureSocial,
-    bgColor: "bg-indigo-50",
-    details: {
-      version: "Version 3.0.5",
-      date: "December 8, 2025",
-      sections: [
-        {
-          title: "New",
-          icon: Sparkles,
-          color: "text-amber-500",
-          items: [
-            "A/B testing for subject lines and content.",
-            "Dynamic content blocks based on user segments.",
-            "AI-written smart replies."
-          ]
-        }
-      ]
-    }
-  },
-  {
-    title: "Live Chat Support",
-    description: "Engage with your website visitors instantly using AI-powered chatbots that provide 24/7 support and assistance.",
-    image: featureCalling,
-    bgColor: "bg-red-50",
-    details: {
-      version: "Version 2.2.0",
-      date: "November 15, 2025",
-      sections: [
-        {
-          title: "AI Enhancements",
-          icon: Sparkles,
-          color: "text-amber-500",
-          items: [
-            "Sentiment analysis for chat escalation.",
-            "Multi-language translation in real-time.",
-            "Knowledge base integration for auto-answers."
-          ]
-        }
-      ]
-    }
-  },
-  {
-    title: "Payment Processing",
-    description: "Securely accept payments from multiple channels with our integrated and fraud-resistant payment solutions.",
-    image: featureShopping,
-    bgColor: "bg-teal-50",
-    details: {
-      version: "Version 1.5.0",
-      date: "December 3, 2025",
-      sections: [
-        {
-          title: "Security",
-          icon: Wrench,
-          color: "text-emerald-500",
-          items: [
-            "Enhanced 3D Secure authentication flow.",
-            "Real-time fraud detection algorithms.",
-            "PCI-DSS compliance reporting tools."
           ]
         }
       ]
@@ -298,8 +156,8 @@ export const Features = ({ showAll = false }: FeaturesProps) => {
                 onClick={() => setSelectedFeature(feature)}
               >
                 <div className={`${feature.bgColor} p-2`}>
-                  <div className="aspect-4/3 overflow-hidden rounded-2xl">
-                    <Image
+                  <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+                    <img
                       src={feature.image}
                       alt={feature.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -323,6 +181,9 @@ export const Features = ({ showAll = false }: FeaturesProps) => {
           {selectedFeature && (
             <Dialog open={!!selectedFeature} onOpenChange={(open) => !open && setSelectedFeature(null)}>
               <DialogContent className="max-w-2xl p-0 overflow-hidden rounded-3xl border-0 bg-background/95 backdrop-blur-xl shadow-2xl [&>button]:hidden">
+                <DialogTitle className="sr-only">
+                  {selectedFeature.title}
+                </DialogTitle>
                 <div className="relative flex flex-col h-full max-h-[90vh]">
                   {/* Content Container */}
                   <div className="p-8 overflow-y-auto">
@@ -369,8 +230,10 @@ export const Features = ({ showAll = false }: FeaturesProps) => {
                        <Button onClick={() => setSelectedFeature(null)} variant="outline" className="text-base font-medium">
                          Close
                        </Button>
-                       <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-base font-medium">
-                         Get Started
+                       <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 text-base font-medium">
+                         <Link href={selectedFeature.link}>
+                            Get Started
+                         </Link>
                        </Button>
                     </div>
                   </div>

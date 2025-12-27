@@ -1,12 +1,7 @@
 {
   "company": "Akki Computers",
   "category": "e-commerce",
-  "icon": {
-    "src": "https://avatars.githubusercontent.com/u/54023226?v=4",
-    "alt": "akash nai pfp",
-    "height": 460,
-    "width": 460
-  },
+  "icon": "https://avatars.githubusercontent.com/u/54023226?v=4",
   "title": "Akki computer is giving away 5090 to a single lucky winner",
   "subtitle": "Akki computer is giving away 5090 to a single lucky winner",
   "description": "Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. Akki computer is giving away 5090 to a single lucky winner. ",
@@ -23,9 +18,7 @@
       }
     ]
   },
-  "techStack": [
-    "Akki computer is giving away 5090 to a single lucky winner. "
-  ],
+  "techStack": ["Akki computer is giving away 5090 to a single lucky winner. "],
   "timeline": [
     {
       "week": 5,

@@ -1,0 +1,96 @@
+{
+  "company": "Marketing Agency",
+  "category": "Marketing",
+  "title": "Auto SEO & Blog Posting",
+  "subtitle": "Turning missed calls into qualified viewings without lifting a finger.",
+  "description": "How a boutique agency used AI agents to qualify leads 24/7, turning missed calls into scheduled viewings automatically.",
+  "metric": {
+    "label": "in Booked Appointments",
+    "outcome": "300+ new visiters/day"
+  },
+  "problemStatement": {
+    "main": "Neon Realty was bleeding opportunities. With agents spending 6 hours a day vetting tire-kickers and missing 40% of inbound calls after hours, their marketing ROI was plummeting despite high traffic.",
+    "points": [
+      {
+        "title": "LEAKY FUNNEL",
+        "description": "60% of leads went cold before an agent could reach them."
+      },
+      {
+        "title": "AGENT BURNOUT",
+        "description": "Top performers were wasting time on low-quality leads."
+      },
+      {
+        "title": "MISSED AFTER-HOURS",
+        "description": "Zero response capability for evening/weekend inquiries."
+      },
+      {
+        "title": "SCHEDULING NIGHTMARE",
+        "description": "Endless back-and-forth emails to book simple viewings."
+      }
+    ]
+  },
+  "techStack": [
+    "OpenAI GPT-4 (Intelligence)",
+    "Vapi.ai (Voice AI)",
+    "GoHighLevel (CRM)",
+    "Make.com (Orchestration)",
+    "Cal.com (Scheduling)"
+  ],
+  "timeline": [
+    {
+      "week": 1,
+      "title": "DISCOVERY & SCRIPTING",
+      "description": "Auditing call logs, defining lead scoring criteria & crafting the AI persona."
+    },
+    {
+      "week": 2,
+      "title": "INTEGRATION",
+      "description": "Connecting Voice AI with CRM and Calendar scheduling logic."
+    },
+    {
+      "week": 3,
+      "title": "GO LIVE",
+      "description": "Soft launch on inbound marketing channels & performance tuning."
+    }
+  ],
+  "pipeline": [
+    {
+      "step": 1,
+      "title": "Ingest",
+      "description": "Lead calls or submits form. AI instantly engages via Voice or SMS."
+    },
+    {
+      "step": 2,
+      "title": "Qualify",
+      "description": "AI asks 5 critical vetting questions (Budget, Location, Timeline, Credit)."
+    },
+    {
+      "step": 3,
+      "title": "Nurture/Schedule",
+      "description": "Qualified? AI books viewing directly into agent calendar. Unqualified? AI adds to long-term nurture drip."
+    },
+    {
+      "step": 4,
+      "title": "Handoff",
+      "description": "Agent receives full transcript & lead score before the meeting starts."
+    }
+  ],
+  "outcomes": [
+    {
+      "metric": "Appointment Boom",
+      "outcome": "300% increase in qualified viewings booked."
+    },
+    {
+      "metric": "Time Saved",
+      "outcome": "25+ hours saved per agent per week on admin work."
+    },
+    {
+      "metric": "Response Time",
+      "outcome": "Instant response (under 10s) 24/7/365."
+    },
+    {
+      "metric": "Zero Lead Leakage",
+      "outcome": "100% of inbound inquiries processed."
+    }
+  ]
+}

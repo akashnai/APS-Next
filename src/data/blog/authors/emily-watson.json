@@ -1,9 +1,5 @@
 {
   "name": "Emily Watson",
-  "role": "ux-director",
-  "image": {
-    "src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
-    "height": 100,
-    "width": 100
-  }
+  "role": "Product Manager",
+  "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
 }

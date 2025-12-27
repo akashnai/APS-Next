@@ -18,12 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-         <div className="max-w-[1280px] mx-auto p-8">
-           <Providers>
+          <Providers>
             {children}
             <Toaster />
-           </Providers>
-         </div>
+          </Providers>
       </body>
     </html>
   );

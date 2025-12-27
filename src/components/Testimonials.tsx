@@ -9,32 +9,32 @@ const reviews = [
   {
     img: "https://i.pravatar.cc/150?img=11",
     quote:
-      "The UI is stunning and the rotation animation adds such a nice touch. It makes the testimonial section fun to interact with.",
-    author: "Marcus Alistair, UI Designer",
+    "The UI is stunning and the rotation animation adds such a nice touch. It makes the testimonial section fun to interact with.",
+    author: "Varteq Founder, CEO Neo Aid",
   },
   {
     img: "https://i.pravatar.cc/150?img=5",
     quote:
-      "I've never seen a review section this clean. The active user popping out draws attention instantly.",
-    author: "Sarah Jenkins, Product Manager",
+      "Outstanding service and support. The team understood our needs perfectly and delivered a solution that exceeded our expectations. Their lead scraping and outreach system filled our CRM and calendar with new leads every day.",
+    author: "Fiachra MacFadden, Sales Head Knowledge Products Pvt Ltd",
   },
   {
     img: "https://i.pravatar.cc/150?img=3",
     quote:
-      "As a small agency, time is everything. APS streamlined communication and approvals — now we deliver faster.",
-    author: "Ryan Chen, Creative Director, Pixel & Hue",
+      "The custom AI chatbot they developed has revolutionized our customer service. Response times are down 85% and customer satisfaction is at an all-time high.",
+    author: "Sunil Vedwal, COO SRH Solar Pvt Ltd",
   },
   {
     img: "https://i.pravatar.cc/150?img=9",
     quote:
-      "Implementation took under ten minutes. This component is ridiculously plug-and-play.",
-    author: "Elena Rodriguez, CEO, StartScale",
+      "Professional, knowledgeable, and results-driven. AutoPilot Studio is the partner you want for AI automation projects.",
+    author: "Vikas Rawat, Interior Contractor ShreeVaidhahi Style",
   },
   {
     img: "https://i.pravatar.cc/150?img=32",
     quote:
-      "The tilt and hover effects show how thoughtful design elevates user experience.",
-    author: "David Kim, Lead Developer",
+      "They implemented AI in my emailing system now we can respond to parents under 3 min along with student information. Really appreciate what they are doing with AI in Autopilot Studio",
+    author: "Robert STEW, Marketing Consultant",
   },
 ];
 

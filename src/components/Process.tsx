@@ -6,8 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 const steps = [
   {
     number: "01",
-    title: "Understanding Requirements",
-    description: "Gather your key considerations and clarify what it takes to create a product that works seamlessly for your business.",
+    title: "Audit",
+    description: "Gather your key considerations and clarify what it takes to remove Bottlenecks of your operations.",
   },
   {
     number: "02",

@@ -1,12 +1,4 @@
-import {
-  TrendingUp,
-  Users,
-  Phone,
-  Zap,
-  Database,
-  MessageSquare,
-  type LucideIcon
-} from "lucide-react";
+import { TrendingUp, Phone, Database, type LucideIcon } from "lucide-react";
 
 export interface CaseStudy {
   id: string;
@@ -24,8 +16,8 @@ export interface CaseStudy {
     points: { title: string; description: string }[];
   };
   techStack?: string[];
-  timeline?: { week: string; title: string; description: string }[];
-  pipeline?: { step: string; title: string; description: string }[];
+  timeline?: { week: string | number; title: string; description: string }[];
+  pipeline?: { step: string | number; title: string; description: string }[];
   outcomes?: { metric: string; outcome: string }[];
 }
 
@@ -35,7 +27,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "auto-mobile-company",
     company: "Auto Mobile Company",
     category: "Customer Engagement",
-    metric: "80% Reduction",
+    metric: "100 more enquires answered",
     metricLabel: "in Operational Costs",
     description:
       "Intelligent Voice Automation with Smart Human Handoff & Google Sheets Integration that revolutionized customer follow-ups.",
@@ -143,15 +135,15 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "2",
-    slug: "neon-realty",
-    company: "Neon Realty",
-    category: "Real Estate",
-    metric: "300% Increase",
+    slug: "marketing-agency",
+    company: "Marketing Agency",
+    category: "Marketing",
+    metric: "300+ new visiters/day",
     metricLabel: "in Booked Appointments",
     description:
       "How a boutique agency used AI agents to qualify leads 24/7, turning missed calls into scheduled viewings automatically.",
     icon: TrendingUp,
-    title: "24/7 AI Lead Qualification & Scheduling Ecosystem",
+    title: "Auto SEO & blog Posting",
     subtitle:
       "Turning missed calls into qualified viewings without lifting a finger.",
     problemStatement: {
@@ -249,79 +241,22 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
-
   {
     id: "3",
-    slug: "fintech-flow",
-    company: "Fintech Flow",
+    slug: "manufacturing-industry",
+    company: "Manufacturing Industry",
     category: "Finance",
-    metric: "99.9% Accuracy",
+    metric: "3000 emails/day",
     metricLabel: "in Transaction Processing",
     description:
       "Automating reconciliation processes to eliminate human error and speed up financial reporting.",
     icon: Database,
-    title: "Automated Financial Reconciliation System",
+    title: "Lead Scrapping & Outreach",
     subtitle: "Zero-error accounting with real-time transaction matching.",
     techStack: ["Python", "SQL", "Tableau", "AWS"],
     outcomes: [
       { metric: "Error Rate", outcome: "Reduced from 5% to 0.1%" },
       { metric: "Speed", outcome: "Processing time cut by 90%" },
-    ],
-  },
-  {
-    id: "4",
-    slug: "kinetik-brands",
-    company: "Kinetik Brands",
-    category: "E-Commerce",
-    metric: "$50k Monthly",
-    metricLabel: "Revenue via Auto-Recovery",
-    description:
-      "Implementing an intelligent abandoned cart recovery sequence that engages customers with personalized offers.",
-    icon: Users,
-    title: "Abandoned Cart Recovery Engine",
-    subtitle:
-      "Recovering lost revenue with hyper-personalized customer engagement.",
-    techStack: ["Shopify API", "Klaviyo", "OpenAI"],
-    outcomes: [
-      { metric: "Recovery Rate", outcome: "Recovered 15% of abandoned carts" },
-      { metric: "ROI", outcome: "20x ROI in first month" },
-    ],
-  },
-  {
-    id: "5",
-    slug: "legal-eagle",
-    company: "Legal Eagle Partners",
-    category: "Legal",
-    metric: "15 hrs/week",
-    metricLabel: "Saved per Paralegal",
-    description:
-      "Document automation system that generates contracts and legal briefs in minutes instead of hours.",
-    icon: MessageSquare,
-    title: "Legal Document Synthesis Engine",
-    subtitle: "Drafting complex legal documents with AI-assisted precision.",
-    techStack: ["GPT-4", "DocuSign API", "React"],
-    outcomes: [
-      { metric: "Drafting Time", outcome: "Reduced from 4 hours to 15 mins" },
-      { metric: "Accuracy", outcome: "Standardized clauses across all docs" },
-    ],
-  },
-  {
-    id: "6",
-    slug: "med-tech-innovators",
-    company: "MedTech Innovators",
-    category: "Healthcare",
-    metric: "40% Faster",
-    metricLabel: "Patient Onboarding",
-    description:
-      "Streamlining patient intake forms and insurance verification logic to reduce wait times.",
-    icon: Zap,
-    title: "Smart Patient Intake System",
-    subtitle:
-      "Seamless patient onboarding with automated insurance verification.",
-    techStack: ["Next.js", "Azure Health Bot", "FHIR"],
-    outcomes: [
-      { metric: "Wait Times", outcome: "Reduced by 40%" },
-      { metric: "Compliance", outcome: "100% HIPAA Compliant" },
     ],
   },
 ];

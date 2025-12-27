@@ -52,13 +52,13 @@ export default async function BlogPage() {
                   <Card className="group h-full border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-transparent overflow-hidden rounded-3xl cursor-pointer">
                     <div className={`h-64 w-full bg-linear-to-br ${post.entry.gradient} flex items-center justify-center p-6`}>
                       <div className="transition-transform duration-500 -z-10 group-hover:scale-110 flex items-center justify-center w-full h-full">
-                        {!post.entry.icon.src ? null : (
+                      {post.entry.icon && (
                           <Image
-                            className="-z-10 "
-                            src={post.entry.icon.src}
-                            alt={post.entry.icon.alt || "Blog post icon"}
-                            height={post.entry.icon.height as number}
-                            width={post.entry.icon.width as number}
+                            className="-z-10 object-contain"
+                            src={post.entry.icon}
+                            alt={post.entry.title || "Blog post icon"}
+                            height={100}
+                            width={100}
                           />
                         )}
                       </div>

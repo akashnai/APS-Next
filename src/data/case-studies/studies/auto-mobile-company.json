@@ -1,14 +1,13 @@
 {
   "company": "Auto Mobile Company",
-  "category": "customer-engagement",
-  "icon": {},
+  "category": "Customer Engagement",
   "title": "AI-Powered IVR Calling System",
   "subtitle": "Intelligent Voice Automation with Smart Human Handoff & Google Sheets Integration",
-  "metric": {
-    "label": "80% Reduction",
-    "outcome": "in Operational Costs"
-  },
   "description": "Intelligent Voice Automation with Smart Human Handoff & Google Sheets Integration that revolutionized customer follow-ups.",
+  "metric": {
+    "label": "in Operational Costs",
+    "outcome": "100 more enquires answered"
+  },
   "problemStatement": {
     "main": "The client faced high operational costs and missed opportunities due to limited human availability. Manual dialing caused response delays, inconsistent brand messaging, and poor lead prioritization, resulting in low conversion rates and unscalable support during peak hours.",
     "points": [
@@ -19,13 +18,24 @@
       {
         "title": "HIGH OPERATIONAL COST",
         "description": "Call center staffing costs were unsustainable."
+      },
+      {
+        "title": "DATA ENTRY ERRORS",
+        "description": "Manual logging led to 95% higher error rates."
+      },
+      {
+        "title": "SLOW RESPONSE",
+        "description": "Callback delays cooled down warm leads."
       }
     ]
   },
   "techStack": [
     "Google Sheets (Data Source)",
     "AI Voice Engine (TTS/STT)",
-    "NLP / LLM (Dialogue)"
+    "NLP / LLM (Dialogue)",
+    "N8N (Workflow)",
+    "Twilio / Telephony API",
+    "CRM Integration"
   ],
   "timeline": [
     {
@@ -54,6 +64,16 @@
       "step": 2,
       "title": "AI Conversation Engine",
       "description": "Engages prospects with natural, human-like dialogue using custom voice cloning, handling objections, and adapting flow based on responses."
+    },
+    {
+      "step": 3,
+      "title": "Smart Human Handoff",
+      "description": "Detects complex queries or frustration and seamlessly transfers the call to a human agent with full context and a warm introduction."
+    },
+    {
+      "step": 4,
+      "title": "Omnichannel Follow-up",
+      "description": "Automatically syncs results to CRM, sends SMS confirmations, and updates calendars instantly after call completion."
     }
   ],
   "outcomes": [
@@ -68,6 +88,14 @@
     {
       "metric": "Conversion Rates",
       "outcome": "35% improvement in lead-to-customer conversion."
+    },
+    {
+      "metric": "Customer Experience",
+      "outcome": "92% of users couldn't distinguish AI from human."
+    },
+    {
+      "metric": "Scalability",
+      "outcome": "Scale from 100 to 10,000 calls without new hires."
     }
   ]
 }
