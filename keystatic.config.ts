@@ -61,7 +61,36 @@ export default config({
           description:
             "Tailwind gradient class (eg, 'from-[#D3E4FD] to-[#FFD1D1]') ",
         }),
-        icon: fields.text({ label: "Icon Link" }),
+        icon: fields.conditional(
+          fields.select({
+            label: "Icon Type",
+            options: [
+              { label: "Upload Image", value: "upload" },
+              { label: "External URL", value: "external" },
+            ],
+            defaultValue: "upload",
+          }),
+          {
+            upload: fields.image({
+              label: "Icon File",
+              directory: "public/images/posts",
+              publicPath: "/images/posts/",
+            }),
+            external: fields.object({
+              url: fields.text({ label: "Image URL" }),
+              width: fields.integer({
+                label: "Width",
+                defaultValue: 1600,
+                description: "Width in pixels",
+              }),
+              height: fields.integer({
+                label: "Height",
+                defaultValue: 900,
+                description: "Height in pixels",
+              }),
+            }),
+          }
+        ),
         draft: fields.checkbox({ label: "Draft" }),
       },
     }),

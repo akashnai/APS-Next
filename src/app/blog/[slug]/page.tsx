@@ -63,15 +63,26 @@ export default async function BlogPostPage({
             </div>
           </motion.div> */}
           <div
-            className={`animate-fade-up w-full p-8 rounded-[2.5rem] bg-linear-to-br ${post.gradient} mb-20`}
+            className={`animate-fade-up w-full p-8 rounded-[2.5rem] bg-linear-to-br ${post.gradient} mb-8`}
           >
             <div className="aspect-video w-full bg-white/50 rounded-3xl flex items-center justify-center">
-              <div className="w-24 h-24 text-foreground/20">
+              <div className="w-full h-full p-12 flex items-center justify-center text-foreground/20">
                 {post.icon && (
                   <img
-                    src={post.icon}
+                    src={
+                  post.icon.discriminant === 'upload' 
+                    ? (post.icon.value ?? "") 
+                    : post.icon.value.url
+                }
+                referrerPolicy="no-referrer"
                     alt={post.title}
-                    className="w-full h-full object-contain"
+                    className="max-w-full max-h-full object-contain"
+                    style={
+                      post.icon.discriminant === 'external' ? {
+                        width: post.icon.value.width ? `${post.icon.value.width}px` : '100%',
+                        height: post.icon.value.height ? `${post.icon.value.height}px` : '100%',
+                      } : {}
+                    }
                   />
                 )}
               </div>
