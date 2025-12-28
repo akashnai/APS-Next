@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -11,6 +12,36 @@ import Markdoc from "@markdoc/markdoc";
 import { markdocConfig } from "@/../keystatic.config";
 import React from "react";
 import Image from "next/image";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await reader.collections.posts.read(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  // TODO: Replace with your actual domain
+  const siteUrl = "https://autopilot-studio.com/"; 
+  const canonicalUrl = `${siteUrl}/blog/${slug}`;
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: canonicalUrl,
+    },
+  };
+}
 
 export default async function BlogPostPage({
   params,
@@ -68,22 +99,18 @@ export default async function BlogPostPage({
             <div className="aspect-video w-full bg-white/50 rounded-3xl flex items-center justify-center">
               <div className="w-full h-full p-12 flex items-center justify-center text-foreground/20">
                 {post.icon && (
-                  <img
-                    src={
-                  post.icon.discriminant === 'upload' 
-                    ? (post.icon.value ?? "") 
-                    : post.icon.value.url
-                }
-                referrerPolicy="no-referrer"
-                    alt={post.title}
-                    className="max-w-full max-h-full object-contain"
-                    style={
-                      post.icon.discriminant === 'external' ? {
-                        width: post.icon.value.width ? `${post.icon.value.width}px` : '100%',
-                        height: post.icon.value.height ? `${post.icon.value.height}px` : '100%',
-                      } : {}
-                    }
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={
+                        post.icon.discriminant === 'upload'
+                          ? (post.icon.value ?? "")
+                          : post.icon.value.url
+                      }
+                      alt={post.title}
+                      className="object-contain"
+                      fill
+                    />
+                  </div>
                 )}
               </div>
             </div>

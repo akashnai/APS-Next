@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
@@ -156,11 +158,13 @@ export const Features = ({ showAll = false }: FeaturesProps) => {
                 onClick={() => setSelectedFeature(feature)}
               >
                 <div className={`${feature.bgColor} p-2`}>
-                  <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                    <img
+                  <div className="aspect-[4/3] overflow-hidden rounded-2xl relative">
+                    <Image
                       src={feature.image}
                       alt={feature.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 </div>
